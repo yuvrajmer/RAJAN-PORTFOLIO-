@@ -14,21 +14,30 @@
    opacity (e.g. bg-lav/20). Change a value here → whole site updates.
    ============================================================ */
 
+/* ---------- Typeface: Gilroy (self-hosted) ----------
+   Two weights are used:
+     weights 100-400 (body copy, descriptions)                    -> Light
+     weights 500-900 (titles, subtitles, buttons, labels, nav)    -> Medium
+   `font-synthesis: none` (index.css) stops browsers from faking in-between weights.
+   Need more weights later? Drop the woff2 in public/fonts/gilroy/ and add one @font-face per weight here. */
 @font-face {
-  font-family: "NeueMachina";
-  font-weight: 400;
+  font-family: "Gilroy";
   font-style: normal;
-  src: url("/fonts/NeueMachina-Regular.woff2") format("woff2"),
-    url("/fonts/NeueMachina-Regular.woff") format("woff");
+  font-weight: 100 400;
   font-display: swap;
+  src: url("/fonts/gilroy/Gilroy-Light.woff2") format("woff2");
 }
 @font-face {
-  font-family: "NeueMachina";
-  font-weight: 500 700;
+  font-family: "Gilroy";
   font-style: normal;
-  src: url("/fonts/NeueMachina-Medium.woff2") format("woff2"),
-    url("/fonts/NeueMachina-Medium.woff") format("woff");
+  font-weight: 500 900;
   font-display: swap;
+  src: url("/fonts/gilroy/Gilroy-Medium.woff2") format("woff2");
+}
+
+:root {
+  /* Typography — the ONE place the site's typeface is named (used by Tailwind + plain CSS) */
+  --font-sans: "Gilroy", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 :root,
